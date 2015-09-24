@@ -1,0 +1,38 @@
+---
+title: "MPG-weight shiny app overview"
+author: "Boris Badmaev"
+date: "September 23, 2015"
+---
+
+### Introduction
+This is a document that describes the functionality of shiny app called: "MPG (Miles per gallon) dependency on vehicle weight". The app uses the `mtcars` dataset. The app was created as a Course Project in *Developing Data Products* Coursera course of Data Science specialization track.
+
+
+### Shiny App Description
+MPG-weight application provides several simple functions:  
+1. Ability to view a plot showing normalized MPG (`mpg-mean(mpg)`) dependency on normalized weight (`wt-mean(wt)`)*.  
+2. Ability to view a linear regression line with controllable slope (red line)  
+3. Ability to view a plot showing Residuals vs. normalized weight(`wt-mean(wt)`) where Residuals are calculated based on selected regression line.  
+4. App calculates and display the Residual Standard Error based of selected slope of the regression line.  
+5. App predicts and display the predicted MPG value based on simple regression model (lm(mpg~wt)).  
+   
+### Inputs  
+- Slope (slope for a hypothetical regression line, range: -10 to 10)  
+- Vehice weight (used as factor to predict MPG (lb/1000), range: 0 to 6.5)  
+
+### Outputs  
+
+- Updated Hypthetical Regression Line on MPG~Weight plot  
+- Updated Residuals plot  
+- Updated Residual Standard Error  
+- Updated Predicted MPG  
+
+### Known Issues  
+
+1. The scales for Residuals plot change every time I change the slope for the regression line  
+2. If nothing is entered in "Enter Vehicle Weight(lb/1000)" field the app gives an error.
+3. If a Vehicle Weight provided is greater than 7 the app provides negative values for MPG
+
+
+*Note: the reason why MPG~weight plot uses normalized scales is because I didn't want to bother with Intercept. For normalized variables the hypothetical regression lines conveniently go through (0,0).  
+
